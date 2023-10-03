@@ -18,22 +18,32 @@
   </style>
   <main>
     <title>My personal page</title>
-      <img class="image-border" id="AkiraIamge" src="https://cdn.discordapp.com/attachments/959097017215381535/1158795317597184170/IMG_05451.jpg?ex=651d8bbd&is=651c3a3d&hm=cf33b9a97215feee891fe23901ccef764651d7d3694a8f79d45ea821e6e62481&" alt="圖片1">
-      <button id="changeButton" onclick="changeImage()">切换图片</button>
-
-      <script>
-        var imageElement = document.getElementById("AkiraImage");
-        var buttonElement = document.getElementById("changeButton");
-        var currentImageIndex = 0;
-        var imageList = ["https://cdn.discordapp.com/attachments/959097017215381535/1158795317597184170/IMG_05451.jpg?ex=651d8bbd&is=651c3a3d&hm=cf33b9a97215feee891fe23901ccef764651d7d3694a8f79d45ea821e6e62481&", 
-                         "https://media.discordapp.net/attachments/959097017215381535/1158795317878198374/IMG_05461.jpg?ex=651d8bbd&is=651c3a3d&hm=9b6585dec7cdd5e3b0885f2344b11d9832684fdef510782a13f5e1bdf4d74a4b&=&width=596&height=596"];
-
-        function changeImage() {
-            currentImageIndex = (currentImageIndex + 1) % imageList.length;
-            imageElement.src = imageList[currentImageIndex];
-        }
-      </script>
+      <img id="image1" src="image1.jpg" alt="图像一">
+      <img id="image2" src="image2.jpg" alt="图像二">
       
-    </body>
+      <button id="button1" onclick="changeImage()">按钮一</button>
+      <button id="button2" style="display: none;" onclick="changeImage()">按钮二</button>
+      
+      <script>
+      function changeImage() {
+        var image1 = document.getElementById("image1");
+        var image2 = document.getElementById("image2");
+        var button1 = document.getElementById("button1");
+        var button2 = document.getElementById("button2");
+      
+        if (image1.style.display === "none") {
+          image1.style.display = "block";
+          image2.style.display = "none";
+          button1.style.display = "block";
+          button2.style.display = "none";
+        } 
+        else {
+          image1.style.display = "none";
+          image2.style.display = "block";
+          button1.style.display = "none";
+          button2.style.display = "block";
+        }
+      }
+      </script>
   </main>
 </html>
