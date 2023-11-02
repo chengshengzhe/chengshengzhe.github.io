@@ -48,20 +48,6 @@
   
   <img class="image" id="welcome_image" src="https://cdn.discordapp.com/attachments/959097595777667083/1169577542961873000/0771066f1c51be37.jpeg?ex=6555e8f7&is=654373f7&hm=5c0305ed1f1f2872b9f0a0ed6c1357959aeef61bbaa02e1425f49e26af90554e&" alt="welcome">
   <button id="rotate_button"><b>讓前輩旋轉</button>
-  <script>
-    $(document).ready(function() {
-      $("#rotate_button").on("click", function() {
-        $("#welcome_image").animate({ 
-          transform: "rotate(360deg)"
-        }, {
-          step: function(now, fx) {
-            $(this).css('transform', 'rotate(' + now + 'deg)');
-          },
-          duration: 2000
-        });
-      });
-    });
-  </script>
     
   <br>
   <p style="color: black; font-size: 36px; position: fixed; bottom: 450px; background-color: orange">8歲 是隻柴犬</p>
@@ -96,6 +82,16 @@
 
       $("#button2").on("click", function() {
         changeImage();
+      });
+      $("#rotate_button").on("click", function() {
+        $("#welcome_image").animate({ 
+          transform: "rotate(360deg)"
+        }, {
+          step: function(now, fx) {
+            $(this).css('transform', 'rotate(' + now + 'deg)');
+          },
+          duration: 2000
+        });
       });
     });
   </script>
