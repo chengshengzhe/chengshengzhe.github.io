@@ -1,79 +1,86 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <style>
-      body{
-        background-color:gray;
+<head>
+  <style>
+    body {
+      background-color: gray;
+    }
+    .Akiraimage {
+      width: 200px;
+      height: 200px;
+      position: fixed;
+      bottom: 250px;
+    }
+    .image-border {
+      border-color: black;
+      border-width: 10px;
+      border-style: solid;
+      border-radius: 50px;
+    }
+    #welcome_image {
+      width: 500px;
+      margin: 0 auto;
+      display: block;
+      border-color: brown;
+      border-width: 5px;
+      border-style: solid;
+      border-radius: 25px;
+    }
+    #button1, #button2 {
+      position: fixed;
+      width: 200px;
+      height: 100px;
+      size: 100px;
+      font-size: 30px;
+      bottom: 225px;
+      left: 250px;
+    }
+    .Text {
+      color: pink;
+      font-size: 50px;
+    }
+  </style>
+  <title>My personal page</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <p class="Text">こ↑こ↓ 是我的網站</p>
+  <img class="image" id="welcome_image" src="https://cdn.discordapp.com/attachments/959097595777667083/1169577542961873000/0771066f1c51be37.jpeg?ex=6555e8f7&is=654373f7&hm=5c0305ed1f1f2872b9f0a0ed6c1357959aeef61bbaa02e1425f49e26af90554e&" alt="welcome">
+  <br>
+  <p style="color: black; font-size: 36px; position: fixed; bottom: 450px; background-color: orange">8歲 是隻柴犬</p>
+  <img class="Akiraimage image-border" id="image1" src="https://cdn.discordapp.com/attachments/959097017215381535/1158795317597184170/IMG_05451.jpg?ex=651d8bbd&is=651c3a3d&hm=cf33b9a97215feee891fe23901ccef764651d7d3694a8f79d45ea821e6e62481&" alt="Akira_Staring">
+  <img class="Akiraimage image-border" style="display: none" id="image2" src="https://cdn.discordapp.com/attachments/959097017215381535/1158795317878198374/IMG_05461.jpg?ex=651d8bbd&is=651c3a3d&hm=9b6585dec7cdd5e3b0885f2344b11d9832684fdef510782a13f5e1bdf4d74a4b&" alt="Akira_Sleeping">
+  <button id="button1"><b>Let him sleep</button>
+  <button id="button2" style="display: none"><b>Wake him up</button>
+  <script>
+    function changeImage() {
+      var image1 = $("#image1");
+      var image2 = $("#image2");
+      var button1 = $("#button1");
+      var button2 = $("#button2");
+
+      if (image1.is(":visible")) {
+        image1.fadeOut();
+        image2.fadeIn();
+        button1.hide();
+        button2.show();
+      } else {
+        image2.fadeOut();
+        image1.fadeIn();
+        button2.hide();
+        button1.show();
       }
-      .Akiraimage{
-        width:200px;
-        height: 200px;
-        position:fixed;
-        bottom:250px;
-      }
-      .image-border{
-        border-color:black;
-        border-width:10px;
-        border-style:solid;
-        border-radius:50px;
-      }
-      #welcome_image{
-        width:500px;
-        margin:0 auto;
-        display:block;
-        border-color:brown;
-        border-width:5px;
-        border-style:solid;
-        border-radius:25px;
-      }
-      #button1,#button2{
-        position:fixed;
-        width:200px;
-        height:100px;
-        size:100px;
-        font-size:30px;
-        bottom:225px;
-        left:250px;
-      }
-      .Text{
-        color:pink;
-        font-size:50px;
-      }
-    </style>
-    <title>My personal page</title>
-  </head>
-  <body>
-      <p class="Text">こ↑こ↓ 是我的網站</p>
-      <img class="image" id="welcome_image" src="https://img.cdn.nimg.jp/s/nicovideo/thumbnails/22928892/22928892.original/r1280x720l?key=8b4b834cf2f788896647f74eb787014fdde2b41d1bbced7b42e71558c1048b1c" alt="welcome">
-      <br>
-      <p style="color:black;font-size:36px;position:fixed;bottom:450px;background-color:orange">8歲 是隻柴犬</p>
-      <img class="Akiraimage image-border" id="image1" src="https://cdn.discordapp.com/attachments/959097017215381535/1158795317597184170/IMG_05451.jpg?ex=651d8bbd&is=651c3a3d&hm=cf33b9a97215feee891fe23901ccef764651d7d3694a8f79d45ea821e6e62481&" alt="Akira_Staring">
-      <img class="Akiraimage image-border" style="display:none" id="image2" src="https://cdn.discordapp.com/attachments/959097017215381535/1158795317878198374/IMG_05461.jpg?ex=651d8bbd&is=651c3a3d&hm=9b6585dec7cdd5e3b0885f2344b11d9832684fdef510782a13f5e1bdf4d74a4b&" alt="Akira_Sleeping">
-      
-      <button id="button1"onclick="changeImage()"><b>Let him sleep</button>
-      <button id="button2" style="display: none;" onclick="changeImage()"><b>Wake him up</button>
-      
-      <script>
-      function changeImage() {
-        var image1 = document.getElementById("image1");
-        var image2 = document.getElementById("image2");
-        var button1 = document.getElementById("button1");
-        var button2 = document.getElementById("button2");
-      
-        if (image1.style.display === "none") {
-          image1.style.display = "block";
-          image2.style.display = "none";
-          button1.style.display = "block";
-          button2.style.display = "none";
-        } 
-        else {
-          image1.style.display = "none";
-          image2.style.display = "block";
-          button1.style.display = "none";
-          button2.style.display = "block";
-        }
-      }
-      </script>
-  </body>
+    }
+
+    $(document).ready(function() {
+      $("#button1").on("click", function() {
+        changeImage();
+      });
+
+      $("#button2").on("click", function() {
+        changeImage();
+      });
+    });
+  </script>
+</body>
 </html>
