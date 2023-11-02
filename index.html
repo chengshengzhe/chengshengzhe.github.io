@@ -45,7 +45,23 @@
 </head>
 <body>
   <p class="Text">こ↑こ↓ 是我的網站</p>
+  
   <img class="image" id="welcome_image" src="https://cdn.discordapp.com/attachments/959097595777667083/1169577542961873000/0771066f1c51be37.jpeg?ex=6555e8f7&is=654373f7&hm=5c0305ed1f1f2872b9f0a0ed6c1357959aeef61bbaa02e1425f49e26af90554e&" alt="welcome">
+  <button id="rotate_button"><b>旋轉一圈</button>
+  <script>
+    $(document).ready(function() {
+      $("#rotate_button").on("click", function() {
+        $("#welcome_image").animate({ 
+          transform: "rotate(360deg)"
+        }, {
+          step: function(now, fx) {
+            $(this).css('transform', 'rotate(' + now + 'deg)');
+          },
+          duration: 2000
+        });
+      });
+    });
+    
   <br>
   <p style="color: black; font-size: 36px; position: fixed; bottom: 450px; background-color: orange">8歲 是隻柴犬</p>
   <img class="Akiraimage image-border" id="image1" src="https://cdn.discordapp.com/attachments/959097017215381535/1158795317597184170/IMG_05451.jpg?ex=651d8bbd&is=651c3a3d&hm=cf33b9a97215feee891fe23901ccef764651d7d3694a8f79d45ea821e6e62481&" alt="Akira_Staring">
