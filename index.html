@@ -46,7 +46,7 @@
       size: 100px;
       font-size: 30px;
       bottom: 225px;
-      left: 600px;
+      left: 800px;
     }
   </style>
   <title>My personal page</title>
@@ -93,11 +93,11 @@
         changeImage();
       });
       $("#rotate_button").on("click", function() {
-        $("#welcome_image").animate({ 
-          transform: "rotate(360deg)"
+        $("#welcome_image").animate({
+          rotate: '+=360deg'
         }, {
           step: function(now, fx) {
-            $(this).css('transform', 'rotate(' + now + 'deg)');
+            $(this).css('transform', 'rotate(' + now + ')');
           },
           duration: 2000
         });
